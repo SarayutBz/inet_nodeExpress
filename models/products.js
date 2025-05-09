@@ -9,7 +9,8 @@ const productModel = new Schema({
     totalOrders: {
     type: Number,
     default: 0
-  }
+  },
+  totalPrice:{type:Number}
 }, {
     timestamps: true
 })

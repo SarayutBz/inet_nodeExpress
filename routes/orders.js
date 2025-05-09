@@ -131,14 +131,16 @@ router.post('/api/v1/products/:id/orders', MiddleWareToken, async (req, res) => 
     const orderItem = {
         name: product.name,
         price: product.price,
-        quantity
+        quantity,
+        totalPrice:(product.price * quantity)
     };
 
     product.productOrders.push({
         userData,
         ordersUser: [{
             quantity
-        }]
+        }],
+        totalPrice:(product.price * quantity)
     });
 
     const totalOrders = product.productOrders.length;
